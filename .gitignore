@@ -39,4 +39,4 @@ node_modules
 !site/node_modules
 
 # site/setting.js is private
-site/setting.js
+#site/setting.js
