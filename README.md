@@ -12,6 +12,13 @@ npm install
 npm start
 ```
 
+Database Setup
+--------------
+
+Install MongoDB
+
+https://www.mongodb.com/
+
 
 Git Setup
 ---------
