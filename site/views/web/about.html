@@ -1,0 +1,58 @@
+{% extends '../layout/layout.html' %}
+
+{% block script %}
+{% parent %}
+{% endblock %}
+
+{% block style %}
+{% parent %}
+<style>
+.block-image-container {
+  margin-top: 60px;
+  padding-right: 10px;
+}
+img.block-image {
+  width:100%;
+}
+.section-block {
+  margin-bottom: 25px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="text-muted">About Us</h4>
+      <br/>
+      <p>
+      Excepteur sint occaecat cupidatat quis nostrud ullamcoconsectetur
+      adipiscing elit, sed do eiusmod non proident, suntfugiat nulla patur.
+      laboris nisi ut aliquip ex ea commodo sequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse.
+      </p>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <p>
+      Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Excepteur sint occaecat cupidatat quis nostrud ullamcoconsectetur
+      adipiscing elit, sed do eiusmod non proident, suntfugiat nulla patur.
+      laboris nisi ut aliquip ex ea commodo sequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse.
+      </p>
+    </div>
+    <div class="col-md-4">
+      <div class="block-image-container">
+        <img src="/image/stock/hydrangeas.jpg" class="block-image" />
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

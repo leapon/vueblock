@@ -1,0 +1,4 @@
+# start with debug on, with node-inspector
+
+DEBUG=www,basedata,basepage,service node --debug site/bin/www 
+

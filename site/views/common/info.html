@@ -1,0 +1,29 @@
+{% extends '../layout/layout.html' %}
+
+{% block content %}
+
+<div class="container" style="margin-top:10px;">
+
+  <div class="row" style="margin-top:10px;">
+    <div class="col-md-8">
+      {% if page && page.error %}
+      <span class="label label-danger">
+        {{ page.error.message }}
+      </span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:10px;">
+    <div class="col-md-8">
+      {% if page && page.info %}
+      <div class="alert alert-info" role="alert">
+        {{ page.info.message }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

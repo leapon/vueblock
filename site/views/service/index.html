@@ -1,0 +1,60 @@
+{% extends '../layout/layout.html' %}
+
+{% block script %}
+{% parent %}
+<script>
+$().ready(function() {
+  console.log('in service index page');
+  console.log('random number in page:', '{{ page.random_number }}');
+  $.get('/data/service/generate_random_number', function(data) {
+    console.log('random number via ajax:', data.info.value);
+  });
+});
+</script>
+{% endblock %}
+
+{% block style %}
+{% parent %}
+<style>
+.block-image-container {
+  height: 250px;
+  overflow-y: hidden;
+}
+img.block-image {
+  width:100%;
+}
+.section-block {
+  margin-bottom: 25px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h4 class="text-muted">Services</h4>
+      <div class="block-image-container">
+        <img src="/image/stock/lighthouse.jpg" class="block-image" />
+      </div>
+      <br/>
+      <p>
+      Consectetur adipiscing elit, sed do eiusmod non proident, suntfugiat
+      nulla pariatur. Excepteur sint occaecat cupidatat quis nostrud ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+      in reprehenderit in voluptate velit esse.
+      </p>
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <p>
+      Random number generated: {{ page.random_number }}
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

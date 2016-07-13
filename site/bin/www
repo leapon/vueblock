@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var debug = require('debug')('www');
+
+require('../app')(function(app) {
+  debug('webserver setting:', app.setting);
+  app.server.set('port', app.setting.http_port);
+  var webServer = app.server.listen(app.server.get('port'), function() {
+    debug('webserver listening on port ' + webServer.address().port);
+  });
+});

@@ -1,0 +1,5 @@
+# start with debug on, with exclusion
+#DEBUG=*,-app*,-express* npm start
+#DEBUG=www,basedata,basepage,service npm start
+
+DEBUG=*,-express* npm start

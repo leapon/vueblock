@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title|| "website" }}</title>
+
+{% block script %}
+<script src="/library/jquery/jquery.min.js"></script>
+<script src="/library/bootstrap/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="/library/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/library/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="/style/layout.css">
+<link rel="stylesheet" href="/style/style.css">
+{% endblock %}
+</head>
+
+<body>
+{% block header %}
+<div class="header-container container-fluid">
+  <nav class="navbar-static-top navbar-default">
+    <!-- navbar-header -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#bs-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <i class="glyphicon glyphicon-tree-deciduous" style="font-size:1.5em;margin-top:-5px;"></i>
+      </a>
+    </div>
+    <!-- navbar body -->
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="{% if page.page_name == 'index' %}active{% endif %}">
+          <a href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="{% if page.page_name == 'service' %}active{% endif %}">
+          <a href="/service">Service</a>
+        </li>
+        <li class="{% if page.page_name == 'about' %}active{% endif %}">
+          <a href="/page/about">About</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if page.user == null %}
+        <a class="btn btn-login" href="/user/signup" role="button">
+          <!-- <span class="glyphicon glyphicon-log-in"></span> -->
+          <span class="btn-signup-text">Signup</span>
+        </a>
+        <a class="btn btn-login" href="/user/login" role="button">
+          <!-- <span class="glyphicon glyphicon-log-in"></span> -->
+          <span class="btn-login-text"> Login</span>
+        </a>
+        {% else %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="login-info-text">{{ page.user.username }}</span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/user/profile" class="glyphicon glyphicon-home"> Profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/user/logout" class="glyphicon glyphicon-log-out"> Logout</a></li>
+          </ul>
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </nav>
+</div>
+{% endblock %}
+
+<div class="body-container">
+{% block content %}{% endblock %}
+</div>
+
+{% block footer %}
+<div class="footer-container container-fluid">
+  <div class="row">
+    <hr/>
+    <span class="text-muted col-md-12">Leapbase Framework</span>
+  </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

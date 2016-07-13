@@ -1,0 +1,74 @@
+{% extends '../layout/layout.html' %}
+
+{% block script %}
+{% parent %}
+{% endblock %}
+
+{% block style %}
+{% parent %}
+<style>
+img.block-image {
+  width:100%;
+}
+.section-block {
+  margin-bottom: 25px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-muted">The Foundation to Leap From</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+
+      <h4 class="section-block">Introduction</h4>
+      <p class="section-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <div class="row section-block">
+      <div class="col-md-4">
+        <img class="block-image" src="/image/stock/desert.jpg" />
+      </div>
+      <div class="col-md-4">
+        <img class="block-image" src="/image/stock/koala.jpg" />
+      </div>
+      <div class="col-md-4">
+        <img class="block-image" src="/image/stock/fallmum.jpg" />
+      </div>
+      </div>
+
+      <h4 class="section-block">Summary</h4>
+      <p class="section-block">
+      Conaecat ipsum in culpa qui officia deserunt mollit anim id est laborum
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      cillum dolore eu dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      non proident, suntfugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+      </p>
+
+    </div>
+    <div class="col-md-4">
+      <h4>News</h4>
+      <div>
+      <ul>
+        <li>Duis aute irure dolor</li>
+        <li>Ut enim ad minim</li>
+        <li>Deserunt mollit anim</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

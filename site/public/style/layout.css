@@ -1,0 +1,33 @@
+.header-container {
+  background-color: #f8f8f8;
+}
+
+.body-container {
+  padding-top: 10px;
+  min-height: 450px;
+}
+
+.footer-container {
+  margin-top: 20px;
+}
+
+/* header navbar - start */
+
+.btn-login {
+  padding-top: 15px;
+}
+
+.btn-login .btn-login-text {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.login-info-text {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* header navbar - end */
+
+
+
