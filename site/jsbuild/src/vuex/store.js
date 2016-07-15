@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { updateItem } from '../services/support.js'
 
 Vue.use(Vuex)
 
@@ -38,7 +37,6 @@ const mutations = {
   },
   CHANGEITEM(state, index, column, value) {
     state.items[index][column] = value;
-    updateItem(state.items[index]);
   },
   SETFORM(state, form) {
     state.form = form;
