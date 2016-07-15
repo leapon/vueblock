@@ -3,12 +3,12 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    test: ['./src/test.js']
+    hello: ['./src/demo/hello/demo.js']
   },
   output: {
-    path: '../public/script/dist',
-    publicPath: 'script/dist/',
-    filename: '[name].js'
+    path: './src/demo/build/',
+    publicPath: '../build/',
+    filename: '[name]_dist.js'
   },
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
