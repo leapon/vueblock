@@ -6,5 +6,9 @@ new Vue({
   el: '#component1',
   store,
   data: {
+    name: 'guest'
+  },
+  components: {
+    Hello
   }
 });
