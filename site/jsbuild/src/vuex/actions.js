@@ -59,13 +59,5 @@ export const submitForm = ({ dispatch, state }, formName, cb) => {
 
 export const cancelForm = ({ dispatch, state }, formName, cb) => {
   console.log('cancelForm:', formName);
-  /*
-  var form = state['form'];
-  console.log('cancelForm:', formName, JSON.stringify(form));
-  for (var property in form) {
-    form[property] = '';
-  }
-  dispatch('SETFORM', form);
-  */
   cb && cb();
 }
