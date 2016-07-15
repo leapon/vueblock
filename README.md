@@ -9,7 +9,8 @@ Run Webapp
 
 ```
 npm install 
-npm start
+
+./start
 ```
 
 Database Setup
