@@ -1,11 +1,12 @@
 <template>
   <div class="time_container">
-    <h2 class="time_message">{{ displayTime }} ({{ timezone }})</h2>
+    <h2 class="time_message">{{ displayTime }}</h2>
   </div>
 </template>
 
 <script>
 import moment from 'moment';
+import moment_timezone from 'moment-timezone';
 
 export default {
   props: ['timezone'],
@@ -17,9 +18,9 @@ export default {
   activate: function(done) {
     console.log('in activate');
     var self = this;
-    self.displayTime = moment().format('HH:mm:ss');
+    self.displayTime = moment().tz(self.timezone).format('hh:mm:ss A z');
     setInterval(function() {
-      self.displayTime = moment().format('HH:mm:ss');
+      self.displayTime = moment().tz(self.timezone).format('hh:mm:ss A z');
     }, 1000);
     done();
   }

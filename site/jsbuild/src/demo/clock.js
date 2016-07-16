@@ -6,7 +6,7 @@ new Vue({
   el: '#component1',
   store,
   data: {
-    timezone: 'EST'
+    timezone: 'America/New_York'
   },
   components: {
     Clock
