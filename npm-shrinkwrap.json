@@ -290,20 +290,10 @@
       "from": "get-stdin@>=4.0.1 <5.0.0",
       "resolved": "https://registry.npmjs.org/get-stdin/-/get-stdin-4.0.1.tgz"
     },
-    "glob": {
-      "version": "3.2.3",
-      "from": "glob@3.2.3",
-      "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.3.tgz"
-    },
     "graceful-fs": {
       "version": "2.0.3",
       "from": "graceful-fs@>=2.0.0 <2.1.0",
       "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-2.0.3.tgz"
-    },
-    "growl": {
-      "version": "1.8.1",
-      "from": "growl@1.8.1",
-      "resolved": "https://registry.npmjs.org/growl/-/growl-1.8.1.tgz"
     },
     "hoek": {
       "version": "2.16.3",
@@ -327,7 +317,8 @@
       "dependencies": {
         "minimist": {
           "version": "1.2.0",
-          "from": "minimist@>=1.1.0 <2.0.0"
+          "from": "minimist@1.2.0",
+          "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz"
         }
       }
     },
@@ -479,6 +470,11 @@
       "version": "2.13.0",
       "from": "moment@>=2.7.0 <3.0.0",
       "resolved": "https://registry.npmjs.org/moment/-/moment-2.13.0.tgz"
+    },
+    "moment-timezone": {
+      "version": "0.5.4",
+      "from": "moment-timezone@latest",
+      "resolved": "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.4.tgz"
     },
     "mongodb": {
       "version": "2.1.18",
@@ -658,6 +654,11 @@
       "version": "1.4.2",
       "from": "swig@>=1.4.2 <2.0.0",
       "resolved": "https://registry.npmjs.org/swig/-/swig-1.4.2.tgz"
+    },
+    "to-iso-string": {
+      "version": "0.0.2",
+      "from": "to-iso-string@0.0.2",
+      "resolved": "https://registry.npmjs.org/to-iso-string/-/to-iso-string-0.0.2.tgz"
     },
     "topo": {
       "version": "1.1.0",

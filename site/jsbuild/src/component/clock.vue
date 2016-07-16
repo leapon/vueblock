@@ -5,23 +5,21 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
   props: ['timezone'],
-  /*
-  data: {
-    currentTime: Date()
-  },
-  */
-  computed: {
-    displayTime: function() {
-
-      return "11:22:33";
+  data () {
+    return {
+      displayTime: ''
     }
   },
   activate: function(done) {
     console.log('in activate');
+    var self = this;
+    self.displayTime = moment().format('HH:mm:ss');
     setInterval(function() {
-      console.log('in time interval')
+      self.displayTime = moment().format('HH:mm:ss');
     }, 1000);
     done();
   }
