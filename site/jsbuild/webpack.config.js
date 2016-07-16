@@ -3,7 +3,8 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: {
-    hello: ['./src/demo/hello.js']
+    hello: ['./src/demo/hello.js'],
+    clock: ['./src/demo/clock.js']
   },
   output: {
     path: './src/demo/dist/',
