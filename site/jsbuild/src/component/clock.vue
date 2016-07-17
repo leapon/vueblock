@@ -18,6 +18,7 @@ export default {
   activate: function(done) {
     console.log('in activate');
     var self = this;
+    self.timezone = self.timezone || 'America/New_York'; // default to New York
     self.displayTime = moment().tz(self.timezone).format('hh:mm:ss A z');
     setInterval(function() {
       self.displayTime = moment().tz(self.timezone).format('hh:mm:ss A z');
