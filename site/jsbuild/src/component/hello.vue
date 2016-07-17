@@ -1,12 +1,17 @@
 <template>
   <div class="hello_container">
-    <h2 class="hello_message">Hello {{ name }}</h2>
+    <h2 class="hello_message">{{ greeting }} {{ name }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['name']
+  props: ['name'],
+  data () {
+    return {
+      greeting: 'Hello'
+    }
+  },
 }
 </script>
 
