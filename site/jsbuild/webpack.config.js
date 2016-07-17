@@ -4,7 +4,8 @@ var webpack = require('webpack')
 module.exports = {
   entry: {
     hello: ['./src/demo/hello.js'],
-    clock: ['./src/demo/clock.js']
+    clock: ['./src/demo/clock.js'],
+    doorlayout: ['./src/demo/doorlayout.js']
   },
   output: {
     path: './src/demo/dist/',
