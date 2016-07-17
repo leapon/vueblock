@@ -11,7 +11,7 @@ export default {
     return {
       greeting: 'Hello'
     }
-  },
+  }
 }
 </script>
 
