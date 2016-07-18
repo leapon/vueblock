@@ -6,7 +6,8 @@ module.exports = {
     hello: ['./src/demo/hello.js'],
     clock: ['./src/demo/clock.js'],
     barplot: ['./src/demo/barplot.js'],
-    doorlayout: ['./src/demo/doorlayout.js']
+    doorlayout: ['./src/demo/doorlayout.js'],
+    multiselect: ['./src/demo/multiselect.js']
   },
   output: {
     path: './src/demo/dist/',
