@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="multiselect-container">
     <p>{{ label }}</p>
     <multiselect
       :options="source",
@@ -30,4 +30,17 @@ export default {
 </script>
 
 <style>
+.multiselect-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.multiselect-container input.multiselect__input {
+  font-size: 1.4em;
+}
+.multiselect-container .multiselect__tag {
+  font-size: 1.4em;
+}
+.multiselect-container .multiselect__option {
+  font-size: 1.4em;
+}
 </style>
