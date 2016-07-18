@@ -1,29 +1,71 @@
 import Vue from 'vue'
 import store from '../vuex/store'
-import multiselect from '../component/multiselect.vue'
+import treeselect from '../component/treeselect.vue'
+
+var treedata = [
+  {
+    name: "category",
+    values: ["food", "non-food"],
+    children: [
+      {
+        condition: ["==", "food"],
+        values: ["fruit", "vegetable"]
+      },
+      {
+        condition: ["!=", "food"],
+        values: ["supply"]
+      },
+      {
+        condition: true,
+        values: ["container"]
+      }
+    ],
+    support: [
+      {
+        name: "fruit",
+        values: [
+          "apple",
+          "melon",
+          "orange",
+          "peach"
+        ]
+      },
+      {
+        name: "vegetable",
+        values: [
+          "cucumber",
+          "tomato",
+          "zucchini"
+        ]
+      },
+      {
+        name: "supply",
+        values: [
+          "paper towel",
+          "napkin",
+          "fork"
+        ]
+      },
+      {
+        name: "container",
+        values: [
+          "plastic bag",
+          "paper bag"
+        ]
+      }
+    ]
+  }
+];
 
 new Vue({
   el: '#component1',
   store,
   data: {
-    state_name: 'state',
-    state_label: 'State',
-    state_values: [
-      { name:'MD' },
-      { name:'VA' },
-      { name:'DC' }
-    ],
-    fruit_name: 'fruit',
-    fruit_label: 'Fruit',
-    fruit_values: [
-      'Apple',
-      'Melon',
-      'Strawberry',
-      'Blackberry',
-      'Pear'
-    ]
+    name: 'grocery_item',
+    label: 'Select grocery item',
+    treedata: treedata
   },
   components: {
-    multiselect
+    treeselect
   }
 });

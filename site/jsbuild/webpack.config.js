@@ -7,6 +7,7 @@ module.exports = {
     clock: ['./src/demo/clock.js'],
     barplot: ['./src/demo/barplot.js'],
     doorlayout: ['./src/demo/doorlayout.js'],
+    treeselect: ['./src/demo/treeselect.js'],
     multiselect: ['./src/demo/multiselect.js']
   },
   output: {

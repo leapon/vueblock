@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Component Demo</title>
+    <link rel="stylesheet" href="/library/bootstrap/css/bootstrap.min.css" />
+    <script src="/library/jquery/jquery.min.js"></script>
+    <script src="/library/bootstrap/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Component Demo</h4>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-4" id="component1">
+          <treeselect :label="label" :treedata="treedata"></treeselect>
+          <br/>
+        </div>
+      </div>
+    </div>
+    <script src="/demo/dist/treeselect.js"></script>
+  </body>
+</html>
