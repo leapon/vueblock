@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     hello: ['./src/demo/hello.js'],
     clock: ['./src/demo/clock.js'],
+    barplot: ['./src/demo/barplot.js'],
     doorlayout: ['./src/demo/doorlayout.js']
   },
   output: {

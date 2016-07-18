@@ -28,6 +28,7 @@
     "mongodb": "^2.1.18",
     "morgan": "^1.7.0",
     "multer": "^1.1.0",
+    "plotly.js": "^1.14.2",
     "serve-favicon": "^2.3.0",
     "swig": "^1.4.2",
     "underscore": "^1.6.0"
