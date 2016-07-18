@@ -6,12 +6,21 @@ new Vue({
   el: '#component1',
   store,
   data: {
-    name: 'state',
-    label: 'State',
-    values: [
+    state_name: 'state',
+    state_label: 'State',
+    state_values: [
       { name: 'MD' },
       { name: 'VA' },
       { name: 'DC' }
+    ],
+    fruit_name: 'fruit',
+    fruit_label: 'Fruit',
+    fruit_values: [
+      { name: 'Apple' },
+      { name: 'Melon' },
+      { name: 'Strawberry' },
+      { name: 'Blackberry' },
+      { name: 'Pear' }
     ]
   },
   components: {
