@@ -1,9 +1,9 @@
 <template>
   <div class="multiselect-container">
-    <p>{{ label }}</p>
+    <p>{{ treedata.name }}</p>
 
     <multiselect
-      :options="source",
+      :options="treedata.values",
       :selected.sync="value",
       :multiple="false",
       :searchable="true",
@@ -16,8 +16,19 @@
     
   </div>
   
-  <div class="multiselect-container" v-for="childNode in childNodes">
+  <div class="multiselect-container" v-for="childNode in childNodes" track-by="name">
     <p>{{ childNode.name }}</p>
+    <multiselect
+      :options="childNode.values",
+      :selected.sync="value",
+      :multiple="false",
+      :searchable="true",
+      placeholder="Select from list",
+      label="name",
+      :close-on-select="true"
+      :on-change="selectValueChange"
+      key="name"
+    ></multiselect>
   </div>
   
 </template>
