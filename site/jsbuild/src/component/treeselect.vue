@@ -13,13 +13,18 @@
       :on-change="selectValueChange"
       key="name"
     ></multiselect>
-
+    
   </div>
+  
+  <div class="multiselect-container" v-for="childNode in childNodes">
+    <p>{{ childNode.name }}</p>
+  </div>
+  
 </template>
 
 <script>
 import Multiselect from 'vue-multiselect'
-import { getConditionMatchValues } from '../services/support.js'
+import { getArryItemByProperty, getConditionMatchValues } from '../services/support.js'
 
 /*
 {
@@ -49,7 +54,8 @@ export default {
   data () {
     return {
       value: null,
-      source: this.treedata.values
+      source: this.treedata.values,
+      childNodes: []
     }
   },
   methods: {
@@ -57,9 +63,12 @@ export default {
       console.log('selectValueChange:', value);
       var matchValues = getConditionMatchValues(value, this.treedata.conditions);
       console.log('matchValues:', matchValues);
+      this.childNodes = [];
       for (var i = 0; i < matchValues.length; i++) {
         var matchValue = matchValues[i];
-        
+        var node = getArryItemByProperty(this.treedata.nodes, 'name', matchValue);
+        console.log('match node:', matchValue, JSON.stringify(node));
+        this.childNodes.push(node);
       }
     }
   }
