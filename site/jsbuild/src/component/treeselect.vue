@@ -5,11 +5,12 @@
     <multiselect
       :options="source",
       :selected.sync="value",
-      :multiple="true",
+      :multiple="false",
       :searchable="true",
-      placeholder="Pick states",
+      placeholder="Select from list",
       label="name",
       :close-on-select="true"
+      :on-change="selectValueChange"
       key="name"
     ></multiselect>
 
@@ -18,15 +19,45 @@
 
 <script>
 import Multiselect from 'vue-multiselect'
+import { getConditionMatchValues } from '../services/support.js'
+
+/*
+{
+  name: "category",
+  values: ["food", "non-food"],
+  conditions: [
+    {
+      condition: ["==", "food"],
+      values: ["fruit", "vegetable"]
+    }
+  ],
+  nodes: [
+    {
+      name: "fruit",
+      values: [
+        "apple",
+        "melon"
+      ]
+    }
+  ]
+}
+*/
 
 export default {
   props: ['name', 'label', 'treedata'],
   components: { Multiselect },
   data () {
-    console.log('>>> data treedata:', this.treedata);
     return {
       value: null,
-      source: this.treedata[0].values
+      source: this.treedata.values
+    }
+  },
+  methods: {
+    selectValueChange: function(value) {
+      console.log('selectValueChange:', value);
+      var matchValues = getConditionMatchValues(value, this.treedata.conditions);
+      console.log('matchValues:', matchValues);
+
     }
   }
 }
