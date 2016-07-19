@@ -56,7 +56,7 @@ export function getConditionMatchValues(value, conditions) {
       break;
     }
   }
-  console.log('>>> getConditionMatchValues result:', result);
+  //console.log('>>> getConditionMatchValues result:', result);
   return result;
 }
 
