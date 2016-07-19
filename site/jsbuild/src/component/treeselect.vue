@@ -57,7 +57,10 @@ export default {
       console.log('selectValueChange:', value);
       var matchValues = getConditionMatchValues(value, this.treedata.conditions);
       console.log('matchValues:', matchValues);
-
+      for (var i = 0; i < matchValues.length; i++) {
+        var matchValue = matchValues[i];
+        
+      }
     }
   }
 }
