@@ -1,10 +1,9 @@
 <template>
   <div class="multiselect-container">
     <p>{{ treedata.name }}</p>
-
     <multiselect
       :options="treedata.values",
-      :selected.sync="value[this.name]",
+      :selected.sync="value[treedata.name]",
       :multiple="false",
       :searchable="true",
       placeholder="Select from list",
@@ -13,9 +12,7 @@
       :on-change="selectValueChange"
       key="name"
     ></multiselect>
-    
   </div>
-  
   <div class="multiselect-container" v-for="childNode in childNodes" track-by="name">
     <p>{{ childNode.name }}</p>
     <multiselect
@@ -29,34 +26,37 @@
       key="name"
     ></multiselect>
   </div>
-  
 </template>
 
 <script>
 import Multiselect from 'vue-multiselect'
-import { getArryItemByProperty, getConditionMatchValues, cloneObject } from '../services/support.js'
+import store from '../vuex/store'
+import { setItemByName } from '../vuex/actions'
+import { getArryItemByProperty, getConditionMatchValues, cloneObject } from '../services/support'
 
 export default {
   props: ['name', 'label', 'treedata'],
   components: { Multiselect },
+  vuex: {
+    getters: {
+      value: state => state.item
+    }
+  },
   data () {
     return {
-      value: {},
       source: this.treedata.values,
       childNodes: []
     }
   },
   methods: {
     selectValueChange: function(value) {
-      //console.log('selectValueChange:', value);
+      this.value[this.treedata.name] = value;
       var matchValues = getConditionMatchValues(value, this.treedata.conditions);
-      //console.log('matchValues:', matchValues);
       var currentValue = cloneObject(this.value);
       this.childNodes = [];
       for (var i = 0; i < matchValues.length; i++) {
         var matchValue = matchValues[i];
         var node = getArryItemByProperty(this.treedata.nodes, 'name', matchValue);
-        //console.log('match node:', matchValue, JSON.stringify(node));
         this.childNodes.push(node);
       }
     }

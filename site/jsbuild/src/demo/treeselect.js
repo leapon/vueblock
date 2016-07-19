@@ -67,3 +67,8 @@ new Vue({
     treeselect
   }
 });
+
+// button handler
+$('#btn1').click(function() {
+  console.log('store.state:', JSON.stringify(store.state.item));
+});
