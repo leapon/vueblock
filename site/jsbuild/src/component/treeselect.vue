@@ -4,7 +4,7 @@
 
     <multiselect
       :options="treedata.values",
-      :selected.sync="value",
+      :selected.sync="value[this.name]",
       :multiple="false",
       :searchable="true",
       placeholder="Select from list",
@@ -20,13 +20,12 @@
     <p>{{ childNode.name }}</p>
     <multiselect
       :options="childNode.values",
-      :selected.sync="value",
+      :selected.sync="value[childNode.name]",
       :multiple="false",
       :searchable="true",
       placeholder="Select from list",
       label="name",
       :close-on-select="true"
-      :on-change="selectValueChange"
       key="name"
     ></multiselect>
   </div>
@@ -35,50 +34,29 @@
 
 <script>
 import Multiselect from 'vue-multiselect'
-import { getArryItemByProperty, getConditionMatchValues } from '../services/support.js'
-
-/*
-{
-  name: "category",
-  values: ["food", "non-food"],
-  conditions: [
-    {
-      condition: ["==", "food"],
-      values: ["fruit", "vegetable"]
-    }
-  ],
-  nodes: [
-    {
-      name: "fruit",
-      values: [
-        "apple",
-        "melon"
-      ]
-    }
-  ]
-}
-*/
+import { getArryItemByProperty, getConditionMatchValues, cloneObject } from '../services/support.js'
 
 export default {
   props: ['name', 'label', 'treedata'],
   components: { Multiselect },
   data () {
     return {
-      value: null,
+      value: {},
       source: this.treedata.values,
       childNodes: []
     }
   },
   methods: {
     selectValueChange: function(value) {
-      console.log('selectValueChange:', value);
+      //console.log('selectValueChange:', value);
       var matchValues = getConditionMatchValues(value, this.treedata.conditions);
-      console.log('matchValues:', matchValues);
+      //console.log('matchValues:', matchValues);
+      var currentValue = cloneObject(this.value);
       this.childNodes = [];
       for (var i = 0; i < matchValues.length; i++) {
         var matchValue = matchValues[i];
         var node = getArryItemByProperty(this.treedata.nodes, 'name', matchValue);
-        console.log('match node:', matchValue, JSON.stringify(node));
+        //console.log('match node:', matchValue, JSON.stringify(node));
         this.childNodes.push(node);
       }
     }

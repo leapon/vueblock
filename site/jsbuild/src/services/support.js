@@ -39,18 +39,18 @@ export function getConditionMatchValues(value, conditions) {
   var result = [];
   for (var i = 0; i < conditions.length; i++) {
     var [conditionOp, conditionValue] = conditions[i].condition;
-    console.log('>>> check value:' + value + ' on condition:', conditionOp, conditionValue);
+    //console.log('>>> check value:' + value + ' on condition:', conditionOp, conditionValue);
     switch(conditionOp) {
     case true:
       result = result.concat(conditions[i].values);
       break;
     case '==':
-      if (value == conditionValue) {
+      if (value && value == conditionValue) {
         result = result.concat(conditions[i].values);
       }
       break;
     case '!=':
-      if (value != conditionValue) {
+      if (value && value != conditionValue) {
         result = result.concat(conditions[i].values);
       }
       break;
