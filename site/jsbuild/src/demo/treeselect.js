@@ -59,7 +59,7 @@ new Vue({
   el: '#component1',
   store,
   data: {
-    name: 'buy_item',
+    name: 'item1',
     label: 'Select item',
     treedata: treedata
   },
