@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 // app initial state
 const state = {
-  item: {},
+  item: {}, // for treeselect component
   itemCol: {
     item1: {},
     item2: {}

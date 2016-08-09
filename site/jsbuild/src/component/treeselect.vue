@@ -1,6 +1,6 @@
 <template>
   <div class="multiselect-container">
-    <p>{{ treedata.name }}</p>
+    <p>{{ treedata.label }}</p>
     <multiselect
       :options="treedata.values",
       :selected.sync="value[treedata.name]",
@@ -14,7 +14,7 @@
     ></multiselect>
   </div>
   <div class="multiselect-container" v-for="childNode in childNodes" track-by="name">
-    <p>{{ childNode.name }}</p>
+    <p>{{ childNode.label }}</p>
     <multiselect
       :options="childNode.values",
       :selected.sync="value[childNode.name]",

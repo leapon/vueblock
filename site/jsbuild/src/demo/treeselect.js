@@ -4,6 +4,7 @@ import treeselect from '../component/treeselect.vue'
 
 var treedata = {
   name: "grocery",
+  label: "Grocery",
   values: ["food", "non-food"],
   conditions: [
     {
@@ -22,6 +23,7 @@ var treedata = {
   nodes: [
     {
       name: "fruit",
+      label: "Fruit",
       values: [
         "apple",
         "melon",
@@ -31,6 +33,7 @@ var treedata = {
     },
     {
       name: "vegetable",
+      label: "Vegetable",
       values: [
         "cucumber",
         "tomato",
@@ -39,6 +42,7 @@ var treedata = {
     },
     {
       name: "supply",
+      label: "Supply",
       values: [
         "paper towel",
         "napkin",
@@ -47,6 +51,7 @@ var treedata = {
     },
     {
       name: "container",
+      label: "Container",
       values: [
         "plastic bag",
         "paper bag"
