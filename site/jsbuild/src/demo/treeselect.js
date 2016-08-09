@@ -3,7 +3,7 @@ import store from '../vuex/store'
 import treeselect from '../component/treeselect.vue'
 
 var treedata = {
-  name: "category",
+  name: "grocery",
   values: ["food", "non-food"],
   conditions: [
     {
